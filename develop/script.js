@@ -56,10 +56,47 @@ var selpassopt = function() {
         choices = alert("Please select either: Uppercase, Lowercase, Special characters, or Numbers.");
      }
     else if (speccharConfirm && passnumConfirm && uppercaseConfirm && lowercaseConfirm) {
-        choices = specchar.concat(passnum, passlett, passlettupper);
-
+        choices = specchar.concat(passnum, passlettupper, passlett);
     } 
 
-    };
-  
+
+    else if (speccharConfirm && passnumConfirm && uppercaseConfirm) {
+        choices = specchar.concat(passnum, passlettupper);
+        //alert("your not selecting lowercase")
+    }
+    else if (speccharConfirm && passnumConfirm && lowercaseConfirm) {
+        choices = specchar.concat(passnum, passlett);
+       // alert("your not selecting uppercase")
+    }
+    else if (speccharConfirm && lowercaseConfirm && uppercaseConfirm) {
+        choices = specchar.concat(passlett, passlettupper);
+        //alert("your momma is a number")
+    }
+    else if (passnumConfirm && lowercaseConfirm && uppercaseConfirm) {
+        choices = passnum.concat(passlett, passlettupper);
+        //alert("alert" + choices)
+    }
+    else if (speccharConfirm && passnumConfirm) {
+        choices = specchar.concat(passnum);
+    }
+
+    else if (speccharConfirm && lowercaseConfirm) {
+        choices = specchar.concat(passlett);
+    }
+
+    else if (speccharConfirm && uppercaseConfirm) {
+        choices = specchar.concat(passlettupper);
+    }
+    else if (passnumConfirm && lowercaseConfirm) {
+        choices = passnum.concat(passlett);
+    }
+    else if (passnumConfirm && uppercaseConfirm)
+    {
+        choices = passnum.concat(passlettupper);
+    }
+    else if (lowercaseConfirm && uppercaseConfirm)
+    {
+        choices = passlett.concat(passlettupper);
+    }
+}
 generateBtn.addEventListener("click", selpassopt);
